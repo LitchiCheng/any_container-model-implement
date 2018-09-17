@@ -9,12 +9,7 @@ public:
 	void timeUp() { time = true; }
 	void timeDown() { time = false; }
 	void valueWrite(T temp) {
-		if (time == true) {
-			temp_write = temp_last = temp;
-		}
-		else {
-			temp_write = temp_last;
-		}
+		time ? (temp_write = temp_last = temp) : temp_write = temp_last;
 	}
 	void destinationWrite(bool dest) {
 		dest ? (temp_B = temp_write) : (temp_A = temp_write);
